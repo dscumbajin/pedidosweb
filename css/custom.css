@@ -1,0 +1,116 @@
+/*
+navbar-default personalizada en:
+http://work.smarchal.com/twbscolor/
+
+*/
+.navbar-default {
+  background-color: #fff;
+  border-color: #fff;
+  border-bottom:2px solid #e11f28;
+}
+.navbar-footer {
+  background-color: gray;
+  border-color: gray;
+}
+
+.navbar-default .navbar-brand {
+  color: #e11f28;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #e11f28;
+}
+.navbar-default .navbar-text {
+  color: #e11f28;
+  background-color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #e11f28;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #e11f28;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ecdbff;
+  background-color: #e11f28;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ecdbff;
+  background-color: #e11f28;
+}
+.navbar-default .navbar-toggle {
+  border-color: #e11f28;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #e11f28;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: darkgray;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e11f28;
+}
+.navbar-default .navbar-link {
+  color: #e11f28;
+}
+.navbar-default .navbar-link:hover {
+  color: #ecdbff;
+}
+.btn:hover {
+  /*background-color: gray;
+  /*background-color: rgb(104, 145, 162);
+  / background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+  padding: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
+.btn {
+  background-color:none;
+  /*background-color: rgb(104, 145, 162);
+  / background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+  padding: 0px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 36px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  -o-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -webkit-transition: all 0.218s;
+  transition: all 0.218s;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #e11f28;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ecdbff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ecdbff;
+    background-color: #e11f28;
+  }
+}
+
