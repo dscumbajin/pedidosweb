@@ -6,7 +6,7 @@
 		    var q = $("#q").val();
 		    $("#loader").fadeIn('slow');
 		    $.ajax({
-		        url: './ajax/buscar_clientes.php?action=ajax&page=' + page + '&q=' + q,
+		        url: './ajax/buscar_cliente_lineas.php?action=ajax&page=' + page + '&q=' + q,
 		        beforeSend: function(objeto) {
 		            $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
 		        },
@@ -23,7 +23,7 @@
 		    if (confirm("Realmente deseas eliminar el cliente")) {
 		        $.ajax({
 		            type: "GET",
-		            url: "./ajax/buscar_clientes.php",
+		            url: "./ajax/buscar_cliente_lineas.php",
 		            data: "id=" + id,
 		            "q": q,
 		            beforeSend: function(objeto) {

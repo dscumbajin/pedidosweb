@@ -48,9 +48,9 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		 $aColumns = array('nombreCliente');//Columnas de busqueda
-		 $sTable = "clientes";
-		 $sWhere = "";
+		 $aColumns = array('codigoLinea');//Columnas de busqueda
+		 $sTable = "clientelinea";
+		 $sWhere = "WHERE codigoCliente = 0102170396001 ";
 		if ( $_GET['q'] != "" )
 		{
 			$sWhere = "WHERE (";
@@ -59,9 +59,9 @@
 				$sWhere .= $aColumns[$i]." LIKE '%".$q."%' OR ";
 			}
 			$sWhere = substr_replace( $sWhere, "", -3 );
-			$sWhere .= ')';
+			$sWhere .= ') and codigoCliente = 0102170396001';
 		}
-		$sWhere.=" order by nombreCliente";
+		echo $sWhere;
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
@@ -73,22 +73,20 @@
 		$row= mysqli_fetch_array($count_query);
 		$numrows = $row['numrows'];
 		$total_pages = ceil($numrows/$per_page);
-		$reload = './clientes.php';
+		$reload = './cliente_lineas.php';
 		//main query to fetch the data
 		$sql="SELECT * FROM  $sTable $sWhere LIMIT $offset,$per_page";
 		$query = mysqli_query($con, $sql);
 		//loop through fetched data
+
 		if ($numrows>0){
 			
 			?>
 			<div class="table-responsive">
 			  <table id="registros" class="table table-bordered table-striped">
 				<tr  class="info">
-					<th>Linea</th>
-					<th>Nombre</th>
-					<th>Teléfono</th>
-					<th>Email</th>
-					<th>Dirección</th>
+					<th>Código cliente</th>
+					<th>Codigo Linea</th>
 					<th>Estado</th>
 					<th>Acciones</th>
 					
@@ -96,29 +94,17 @@
 				<?php
 				while ($row=mysqli_fetch_array($query)){
 						$id_cliente=$row['codigoCliente'];
-						$nombre_cliente=$row['nombreCliente'];
-						$telefono_cliente=$row['telefono'];
-						$email_cliente=$row['mailCliente'];
-						$direccion_cliente=$row['direccion'];
-						$status_cliente=$row['estadoCliente'];
+						$id_linea=$row['codigoLinea'];
+						$status_cliente=$row['estado'];
 						if ($status_cliente==1){$estado="Activo";}
 						else {$estado="Inactivo";}			
 					?>
 					
-					<input type="hidden" value="<?php echo $nombre_cliente;?>" id="nombre_cliente<?php echo $id_cliente;?>">
-					<input type="hidden" value="<?php echo $telefono_cliente;?>" id="telefono_cliente<?php echo $id_cliente;?>">
-					<input type="hidden" value="<?php echo $email_cliente;?>" id="email_cliente<?php echo $id_cliente;?>">
-					<input type="hidden" value="<?php echo $direccion_cliente;?>" id="direccion_cliente<?php echo $id_cliente;?>">
+					<input type="hidden" value="<?php echo $id_linea;?>" id="id_linea<?php echo $id_cliente;?>">
 					<input type="hidden" value="<?php echo $status_cliente;?>" id="status_cliente<?php echo $id_cliente;?>">
-					
 					<tr>
-						<td>
-						<a href="cliente_lineas.php?ruc=<?php echo $id_cliente;?>"  title='Cliente Linea'><i class="glyphicon glyphicon-plus" style = "color: green;"></i></a> 
-						</td>
-						<td><?php echo $nombre_cliente; ?></td>
-						<td ><?php echo $telefono_cliente; ?></td>
-						<td ><?php echo $email_cliente;?></td>
-						<td ><?php echo $direccion_cliente;?></td>
+						<td><?php echo $id_cliente; ?></td>
+						<td><?php echo $id_linea; ?></td>
 						<td><?php echo $estado;?></td>
 					<td ><span >
 					<a href="#"  title='Editar cliente' onclick="obtener_datos('<?php echo $id_cliente;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
