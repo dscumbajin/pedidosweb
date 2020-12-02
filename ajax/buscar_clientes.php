@@ -113,7 +113,8 @@
 					
 					<tr>
 						<td>
-						<a href="cliente_lineas.php?ruc=<?php echo $id_cliente;?>"  title='Cliente Linea'><i class="glyphicon glyphicon-plus" style = "color: green;"></i></a> 
+						<a onclick="crearCookie('query', '<?php echo $id_cliente;?>', 2 );" href="cliente_lineas.php?ruc=<?php echo $id_cliente;?>" title='Cliente Linea'><i class="glyphicon glyphicon-plus" style = "color: green;"></i></a> 
+						
 						</td>
 						<td><?php echo $nombre_cliente; ?></td>
 						<td ><?php echo $telefono_cliente; ?></td>
@@ -150,3 +151,16 @@
 		}
 	}
 ?>
+<script>
+function crearCookie(nombre, valor, dias) {
+        var expira;
+        if (dias) {
+            var date = new Date();
+            date.setTime(date.getTime() + (dias * 24 * 60 * 60 * 1000));
+            expira = "; expires=" + date.toGMTString();
+        } else {
+            expira = "";
+        }
+        document.cookie = escape(nombre) + "=" + escape(valor) + expira + "; path=/";
+    }
+</script>

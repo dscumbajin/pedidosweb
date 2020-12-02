@@ -10,7 +10,8 @@
 	/* Connect To Database*/
 	require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
-	
+
+	$phptemp = $_COOKIE["query"];
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
 		$id_cliente=intval($_GET['id']);
@@ -50,18 +51,18 @@
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $aColumns = array('codigoLinea');//Columnas de busqueda
 		 $sTable = "clientelinea";
-		 $sWhere = "WHERE codigoCliente = 0102170396001 ";
+		 $sWhere = "WHERE codigoCliente = $phptemp ";
 		if ( $_GET['q'] != "" )
 		{
-			$sWhere = "WHERE (";
+			$sWhere = "WHERE codigoCliente =  $phptemp and (";
 			for ( $i=0 ; $i<count($aColumns) ; $i++ )
 			{
 				$sWhere .= $aColumns[$i]." LIKE '%".$q."%' OR ";
 			}
 			$sWhere = substr_replace( $sWhere, "", -3 );
-			$sWhere .= ') and codigoCliente = 0102170396001';
+			$sWhere .= ')';
 		}
-		echo $sWhere;
+		
 		include 'pagination.php'; //include pagination file
 		//pagination variables
 		$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
