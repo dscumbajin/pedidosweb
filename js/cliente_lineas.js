@@ -57,13 +57,13 @@
 		    event.preventDefault();
 		})
 
-		$("#editar_cliente").submit(function(event) {
+		$("#editar_cliente_linea ").submit(function(event) {
 		    $('#actualizar_datos').attr("disabled", true);
 
 		    var parametros = $(this).serialize();
 		    $.ajax({
 		        type: "POST",
-		        url: "ajax/editar_cliente.php",
+		        url: "ajax/editar_cliente_linea.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
 		            $("#resultados_ajax2").html("Mensaje: Cargando...");
@@ -77,18 +77,10 @@
 		    event.preventDefault();
 		})
 
-		function obtener_datos(id) {
-		    var nombre_cliente = $("#nombre_cliente" + id).val();
-		    var telefono_cliente = $("#telefono_cliente" + id).val();
-		    var email_cliente = $("#email_cliente" + id).val();
-		    var direccion_cliente = $("#direccion_cliente" + id).val();
-		    var status_cliente = $("#status_cliente" + id).val();
-
-		    $("#mod_nombre").val(nombre_cliente);
-		    $("#mod_telefono").val(telefono_cliente);
-		    $("#mod_email").val(email_cliente);
-		    $("#mod_direccion").val(direccion_cliente);
-		    $("#mod_estado").val(status_cliente);
-		    $("#mod_id").val(id);
+		function obtener_datos(id, id_linea, status_linea) {
+		    
+		    $("#mod_id_cliente").val(id);
+		    $("#mod_id_linea").val(id_linea);
+		    $("#mod_estado").val(status_linea);
 
 		}

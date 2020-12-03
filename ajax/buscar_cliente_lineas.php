@@ -49,7 +49,7 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		 $aColumns = array('clientelinea.codigoLinea');//Columnas de busqueda
+		 $aColumns = array('clientelinea.codigoLinea', 'nombreLinea');//Columnas de busqueda
 		 $sTable = "clientelinea, clientes, listalinea";
 		 $sWhere = "WHERE clientelinea.codigoCliente = $phptemp 
 		 AND clientelinea.codigoCliente = clientes.codigoCliente
@@ -95,7 +95,7 @@
 				<tr  class="info">
 					<th>Código cliente</th>
 					<th>Nombre cliente</th>
-					<th>Codigo Linea</th>
+					<th>Código Linea</th>
 					<th>Linea de negocio</th>
 					<th>Estado</th>
 					<th>Acciones</th>
@@ -107,13 +107,13 @@
 						$nombre_cliente = $row['nombreCliente'];
 						$id_linea=$row['codigoLinea'];
 						$linea_negocio = $row['nombreLinea'];
-						$status_cliente=$row['estado'];
-						if ($status_cliente==1){$estado="Activo";}
+						$status_linea=$row['estado'];
+						if ($status_linea==1){$estado="Activo";}
 						else {$estado="Inactivo";}			
 					?>
-					
-					<input type="hidden" value="<?php echo $id_linea;?>" id="id_linea<?php echo $id_cliente;?>">
-					<input type="hidden" value="<?php echo $status_cliente;?>" id="status_cliente<?php echo $id_cliente;?>">
+					<input type="hidden" value="<?php echo $linea_negocio;?>" id="linea_negocio<?php echo $id_cliente;?>">
+					<input type="hidden" value="<?php echo $id_linea;?>" id="id_linea_estado<?php echo $id_cliente;?>">
+					<input type="hidden" value="<?php echo $status_linea;?>" id="status_linea<?php echo $id_cliente;?>">
 					<tr>
 						<td><?php echo $id_cliente; ?></td>
 						<td><?php echo $nombre_cliente; ?></td>
@@ -121,8 +121,8 @@
 						<td><?php echo $linea_negocio; ?></td>
 						<td><?php echo $estado;?></td>
 					<td ><span >
-					<a href="#"  title='Editar cliente' onclick="obtener_datos('<?php echo $id_cliente;?>');" data-toggle="modal" data-target="#myModal2"><i class="glyphicon glyphicon-edit"></i></a> 
-					<a href="#"  title='Borrar cliente' onclick="eliminar('<?php echo $id_cliente; ?>')"><i class="glyphicon glyphicon-trash" style = "color: red;"></i> </a></span></td>
+					<a href="#"  title='Editar cliente linea' onclick="obtener_datos('<?php echo $id_cliente;?>', '<?php echo $id_linea;?>', '<?php echo $status_linea;?>');" data-toggle="modal" data-target="#myModal22"><i class="glyphicon glyphicon-edit"></i></a> 
+					<a href="#"  title='Borrar cliente linea' onclick="eliminar('<?php echo $id_cliente; ?>')"><i class="glyphicon glyphicon-trash" style = "color: red;"></i> </a></span></td>
 						
 					</tr>
 					<?php
