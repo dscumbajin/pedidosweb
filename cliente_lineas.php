@@ -38,7 +38,7 @@
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="btn-group pull-right">
-                    <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoCliente"><span
+                    <button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoClienteLinea"><span
                             class="glyphicon glyphicon-plus"></span> Asignar linea</button>
                 </div>
                 <h4><i class='glyphicon glyphicon-search'></i> Buscar Lineas</h4>
@@ -48,7 +48,7 @@
 
 
                 <?php
-				include("modal/registro_clientes.php");
+				include("modal/registro_cliente_lineas.php");
 				include("modal/editar_cliente_lineas.php");
 			?>
                 <form class="form-horizontal" role="form" id="datos_cotizacion">

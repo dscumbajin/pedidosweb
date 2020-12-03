@@ -37,13 +37,13 @@
 		    }
 		}
 
-		$("#guardar_cliente").submit(function(event) {
+		$("#guardar_cliente_linea").submit(function(event) {
 		    $('#guardar_datos').attr("disabled", true);
 
 		    var parametros = $(this).serialize();
 		    $.ajax({
 		        type: "POST",
-		        url: "ajax/nuevo_cliente.php",
+		        url: "ajax/nuevo_cliente_linea.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
 		            $("#resultados_ajax").html("Mensaje: Cargando...");
@@ -78,9 +78,11 @@
 		})
 
 		function obtener_datos(id, id_linea, status_linea) {
-		    
+
 		    $("#mod_id_cliente").val(id);
 		    $("#mod_id_linea").val(id_linea);
 		    $("#mod_estado").val(status_linea);
+		    $("#mod_id_cliente").attr('readonly', true);
+		    $("#mod_id_linea").attr('readonly', true);
 
 		}
