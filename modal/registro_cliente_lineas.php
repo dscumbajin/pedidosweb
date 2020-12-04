@@ -29,12 +29,12 @@
 	                            <select class="form-control" id="codigo_linea" name="codigo_linea" required>
 	                                <?php
 										try {
-											$sql = 'SELECT * FROM listalinea';
+											$sql = " SELECT * FROM listalinea WHERE listalinea.codigoLinea NOT IN ( SELECT clientelinea.codigoLinea FROM clientelinea WHERE clientelinea.codigoCliente = $phptemp)";
 
 											$resultado = $con->query($sql);
 											while ($lineaNegocio = $resultado->fetch_assoc()) { ?>
 														<option value="<?php echo $lineaNegocio['codigoLinea']; ?>">
-															<?php echo $lineaNegocio['nombreLinea']; ?></option>
+															<?php echo $lineaNegocio['codigoLinea'] . " - ". $lineaNegocio['nombreLinea']; ?></option>
 														<?php }
 										} catch (Exception $e) {
 											echo "Error: " . $e->getMessage();
@@ -59,7 +59,7 @@
 	            </div>
 	            <div class="modal-footer">
 	                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-	                <button type="submit" class="btn btn-primary" id="guardar_datos">Guardar datos</button>
+	                <button type="submit" class="btn btn-primary" id="guardar_datos" >Guardar datos</button>
 	            </div>
 	            </form>
 	        </div>
@@ -68,3 +68,5 @@
 	<?php
 		}
 	?>
+
+	

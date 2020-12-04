@@ -18,13 +18,13 @@
 		    })
 		}
 
-		function eliminar(id) {
+		function eliminar(id, idLinea ) {
 		    var q = $("#q").val();
 		    if (confirm("Realmente deseas eliminar el cliente")) {
 		        $.ajax({
 		            type: "GET",
 		            url: "./ajax/buscar_cliente_lineas.php",
-		            data: "id=" + id,
+					data: "id="+id+"&idLinea="+idLinea,
 		            "q": q,
 		            beforeSend: function(objeto) {
 		                $("#resultados").html("Mensaje: Cargando...");
