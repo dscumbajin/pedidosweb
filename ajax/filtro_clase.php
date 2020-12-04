@@ -17,7 +17,7 @@ if(isset($_GET['marca'],$_GET['listanegocio'])){
     ON productos.codigoLinea = clientelinea.codigoLinea
     INNER JOIN listaclase
     ON listaclase.codigoclase = productos.codigoClase 
-    WHERE codigoCliente = $sesioncode 
+    WHERE codigoCliente = $sesioncode and estado = 0
     and productos.precioUnitario>0 
     and codigoMarca='".$marca."' 
     and codigoFamilia='".$negocio."' 
@@ -30,7 +30,7 @@ if(isset($_GET['marca'],$_GET['listanegocio'])){
     ON productos.codigoLinea = clientelinea.codigoLinea
     LEFT JOIN listaclase
     ON listaclase.codigoclase = productos.codigoClase 
-    WHERE codigoCliente = $sesioncode
+    WHERE codigoCliente = $sesioncode and estado = 0
     and productos.precioUnitario>0
     and listaclase.estadoclase=1
     GROUP BY listaclase.codigoclase";

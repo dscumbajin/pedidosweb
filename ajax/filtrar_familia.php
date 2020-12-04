@@ -15,7 +15,7 @@ LEFT JOIN productos
 ON productos.codigoLinea = clientelinea.codigoLinea
 LEFT JOIN listafamilia
 ON listafamilia.codigofamilia = productos.codigoFamilia
-WHERE codigoCliente = $sesioncode
+WHERE codigoCliente = $sesioncode and estado = 0
 and estadofamilia=1
 GROUP BY listafamilia.codigofamilia ";
 $query = mysqli_query($con, $sql);

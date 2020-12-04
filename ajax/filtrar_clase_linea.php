@@ -23,7 +23,7 @@ INNER JOIN productos
 ON productos.codigoLinea = clientelinea.codigoLinea
 INNER JOIN listafamilia
 ON listafamilia.codigofamilia = productos.codigoFamilia 
-WHERE codigoCliente = $sesioncode 
+WHERE codigoCliente = $sesioncode and estado = 0
 and productos.precioUnitario>0 ";
 
 if(isset($clase)!=null){

@@ -32,8 +32,8 @@
 				<div class="col-sm-8">
 				 <select class="form-control" id="mod_estado" name="mod_estado" required>
 					<option value="">-- Selecciona estado --</option>
-					<option value="1" selected>Activo</option>
-					<option value="0">Inactivo</option>
+					<option value="0" selected>Activo</option>
+					<option value="1">Inactivo</option>
 				  </select>
 				</div>
 			  </div>

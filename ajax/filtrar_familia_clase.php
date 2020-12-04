@@ -16,7 +16,7 @@ INNER JOIN productos
 ON productos.codigoLinea = clientelinea.codigoLinea
 INNER JOIN listaclase
 ON listaclase.codigoclase = productos.codigoClase 
-WHERE codigoCliente = $sesioncode 
+WHERE codigoCliente = $sesioncode and estado = 0
 and productos.precioUnitario>0 
 and productos.codigoFamilia='".$_GET['id']."' 
 and listaclase.estadoclase=1 ";

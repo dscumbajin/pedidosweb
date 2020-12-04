@@ -62,7 +62,7 @@ http://work.smarchal.com/twbscolor/
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: darkgray;
+    background-color: darkgray !important;
 }
 
 .navbar-default .navbar-collapse,
@@ -128,4 +128,32 @@ http://work.smarchal.com/twbscolor/
         color: #ecdbff;
         background-color: #e11f28;
     }
+}
+
+.ellipsis {
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: auto;
+    width: 100px;
+    margin: 0 auto; 
+    text-align: justify
+}
+.ellipsis:hover {
+    text-overflow: initial;
+    white-space: initial;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.reducir150 {
+    position:relative !important;
+    width:120px !important; 
+    overflow:auto !important
+}
+.reducir200{
+    position:relative !important;
+    width:200px !important; 
+    overflow:auto !important
 }

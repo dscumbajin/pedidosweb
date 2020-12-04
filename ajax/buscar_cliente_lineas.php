@@ -108,7 +108,7 @@
 						$id_linea=$row['codigoLinea'];
 						$linea_negocio = $row['nombreLinea'];
 						$status_linea=$row['estado'];
-						if ($status_linea==1){$estado="Activo";}
+						if ($status_linea==0){$estado="Activo";}
 						else {$estado="Inactivo";}			
 					?>
 					<input type="hidden" value="<?php echo $linea_negocio;?>" id="linea_negocio<?php echo $id_cliente;?>">
