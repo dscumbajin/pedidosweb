@@ -29,7 +29,7 @@
         <li><a href="nueva_factura.php" ><span class="nuevo activarbarra " id="nuevo"> Realiza Pedido</span> </a></li>
         <?php
         if($_SESSION['user_id']== "1722909601001"){?>
-          <li><a href="clientes.php" ><span class="nuevo activarbarra " id="nuevo"> Clientes</span> </a></li>
+          <li><a href="clientes.php" ><span class="nuevo activarbarra " id="cliente">Administración - Clientes</span> </a></li>
         <?php } ?>
         
         <li><a href="http://192.168.7.17:8282/E-DocsNeural/login.xhtml" target="_blank" ><span class="nuevo activarbarra " onclick="activarfacturacion()" id="facturacion">Facturación Electrónica</span> </a></li>

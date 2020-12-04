@@ -62,7 +62,7 @@
 					  	<div class="form-group row busqueda"  style="display:flex;padding-top:5px;justify-content:center;margin:auto;5px;padding-bottom:20px;width:100%">
 
 							<div class="col-md-10" style="padding:0; padding-right:10px;">
-								<input type="text" class="form-control" style="" id="q1" placeholder="Buscar productos" onkeyup="loadmodificar(1)" onkeydown="loadmodificar(1)" >
+								<input type="text" class="form-control" id="q1" placeholder="Buscar productos" onkeyup="loadmodificar(1)" onkeydown="loadmodificar(1)" >
 							</div>
 							<button type="button" class="col-md-2 btn btn-dark" onclick="loadmodificar(1)"><span class='glyphicon glyphicon-search'></span> Buscar</button>
 					  	</div>

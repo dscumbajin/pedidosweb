@@ -349,11 +349,11 @@
 
       /*tabla*/
       .table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
-          white-space: nowrap;
+          white-space: initial;
       }
 
       tbody tr td, tbody tr th, tfoot tr td, tfoot tr th, thead  tr td, thead tr th {
-        white-space: nowrap;
+        white-space: initial;
       }
 
 
@@ -481,7 +481,7 @@
       .collapse.in {
           display: block!important;
           animation-delay:.3ms;
-          animation-time:.3ms
+          animation-time:.3ms;
       }
       .collapse{
         display: none!important;
@@ -762,7 +762,7 @@
       }
 
 
-        <!-- custom styling for all icons -->
+       /* custom styling for all icons */
         i.fas,
         i.fab {
           border: 1px solid #e11f28;
@@ -861,7 +861,7 @@
             border:1px solid #343a40;
             color:white;
           }
-        <!-- custom styling for specific icons -->
+        /* custom styling for specific icons */
         .fa-fish {
           color: salmon;
         }
@@ -991,7 +991,7 @@
       /*preloader*/
       .preloader{
                       display:flex;
-                      flex: 0 1 10$;
+                      flex: 0 1 10;
                       z-index:10px;
                       width:40px;
                       height:40px;

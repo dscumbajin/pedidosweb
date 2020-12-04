@@ -19,8 +19,6 @@
     <script>
    $(document).ready(function(){
       //Promise.resolve().then(functiontoRunVerySoonButNotNow);
-
-     
 		
         posicionarMenu();
  
