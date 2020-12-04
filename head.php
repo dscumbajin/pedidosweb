@@ -1182,6 +1182,7 @@
       $('#historico').removeClass('activarnav');
       $('#nuevo').removeClass('activarnav');
       $('#facturacion').addClass('activarnav');
-		}
+    }
+
   </script>
  

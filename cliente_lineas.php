@@ -56,7 +56,7 @@
                     <div class="form-group row">
                         <label for="q" class="col-md-2 control-label">Linea de negocio</label>
                         <div class="col-md-5">
-                            <input type="text" class="form-control" id="q" placeholder="Nombre Linea"
+                            <input type="text" class="form-control" id="q" placeholder="Código o Linea de negocio"
                                 onkeyup='load(1);'>
                         </div>
                         <div class="col-md-3">

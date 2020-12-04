@@ -132,7 +132,7 @@ if ($action == 'ajax') {
 		if ($_GET['q'] != "") {
 		?>
 			<div class="alert alert-danger text-center" role="alert">
-				No existen usuarios filtrados con el dato: <?php echo $_GET['q']; ?>
+				No existen Linea de Negocio filtrados con el dato: <?php echo $_GET['q']; ?>
 			</div>
 <?php
 		}

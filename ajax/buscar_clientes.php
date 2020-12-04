@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 if ($action == 'ajax') {
 	// escaping, additionally removing everything that could be (html/javascript-) code
 	$q = mysqli_real_escape_string($con, (strip_tags($_REQUEST['q'], ENT_QUOTES)));
-	$aColumns = array('nombreCliente'); //Columnas de busqueda
+	$aColumns = array('codigoCliente','nombreCliente'); //Columnas de busqueda
 	$sTable = "clientes";
 	$sWhere = "";
 	if ($_GET['q'] != "") {
@@ -80,6 +80,7 @@ if ($action == 'ajax') {
 			<table id="registrosTable" class="table ">
 				<tr class="info">
 					<th style="padding: 0 0 !important; margin: 0 0 !important;">Linea</th>
+					<th style="padding: 0 0 !important; margin: 0 0 !important;">RUC</th>
 					<th style="padding: 0 0 !important; margin: 0 0 !important;">Nombre</th>
 					<th>Teléfono</th>
 					<th>Email</th>
@@ -113,6 +114,11 @@ if ($action == 'ajax') {
 						<td>
 							<a onclick="crearCookie('query', '<?php echo $id_cliente; ?>', 2 );" href="cliente_lineas.php?ruc=<?php echo $id_cliente; ?>" title='Cliente Linea'><i class="glyphicon glyphicon-plus" style="color: green;"></i></a>
 
+						</td>
+						<td class="ellipsis">
+							<p class="reducir150">
+							<?php echo $id_cliente; ?>
+							</p>
 						</td>
 						<td style="padding: 0 0 !important; margin: 0 0 !important;"><?php echo $nombre_cliente; ?></td>
 						<td class="ellipsis">

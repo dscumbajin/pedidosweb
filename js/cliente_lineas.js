@@ -69,7 +69,10 @@
 		        url: "ajax/editar_cliente_linea.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
-		            $("#resultados_ajax2").html("Mensaje: Cargando...");
+					$("#resultados_ajax2").html("Mensaje: Cargando...");
+					setInterval(() => {
+						location.reload();
+					}, 500);
 		        },
 		        success: function(datos) {
 		            $("#resultados_ajax2").html(datos);
