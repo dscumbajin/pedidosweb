@@ -46,7 +46,10 @@
 		        url: "ajax/nuevo_cliente_linea.php",
 		        data: parametros,
 		        beforeSend: function(objeto) {
-		            $("#resultados_ajax").html("Mensaje: Cargando...");
+					$("#resultados_ajax").html("Mensaje: Cargando...");
+					setInterval(() => {
+						location.reload();
+					}, 500);
 		        },
 		        success: function(datos) {
 		            $("#resultados_ajax").html(datos);
