@@ -767,6 +767,10 @@
         i.fab {
           border: 1px solid #e11f28;
         }
+
+        i.sin.fab {
+          border: none !important;
+        }
         .activar{
           padding:10px 5px;
         }

@@ -30,7 +30,8 @@
 		                $("#resultados").html("Mensaje: Cargando...");
 		            },
 		            success: function(datos) {
-		                $("#resultados").html(datos);
+						$("#resultados").html(datos);
+						location.reload();
 		                load(1);
 		            }
 		        });

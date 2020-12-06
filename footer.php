@@ -3,9 +3,9 @@
       <p class="navbar-footer pull-left" style="background:#f2f2f2; margin:auto; color:#666666">&copy <?php echo date('Y');?> - BATERIAS ECUADOR.
            <a href="http://bateriasecuador.com/" target="_blank" style="color: #666666; font-weigh:bold;">DERECHOS RESERVADOS</a>
            <div class="btn-group pull-right">
-                <a href="https://web.facebook.com/bateriasecuador/" target="_blank"><i style="color:#666666" class="fab fa-facebook x-3"></i></a> |
-                <a href="https://www.youtube.com/channel/UC_KkHecfX2JmOHLsFNkISTA" target="_blank"><i style="color:#666666" class="fab fa-youtube"></i></a> |
-                <a  href="https://www.instagram.com/baterias_ecuador/" target="_blank"><i style="color:#666666" class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/bateriasecuador/" target="_blank"><i style="color:#666666 " class="sin fab fa-facebook x-3"></i></a> |
+                <a href="https://www.youtube.com/channel/UC_KkHecfX2JmOHLsFNkISTA" target="_blank"><i style="color:#666666" class="sin fab fa-youtube"></i></a> |
+                <a  href="https://www.instagram.com/baterias_ecuador/" target="_blank"><i style="color:#666666" class=" sin fab fa-instagram"></i></a>
             </div>
       </p>
    </div>
