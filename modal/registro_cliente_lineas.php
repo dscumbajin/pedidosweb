@@ -24,7 +24,7 @@
 	                    </div>
 
 						<div class="form-group">
-	                        <label for="codigo_linea" class="col-sm-3 control-label">Linea de nogocio</label>
+	                        <label for="codigo_linea" class="col-sm-3 control-label">Linea de negocio</label>
 	                        <div class="col-sm-8">
 	                            <select class="form-control" id="codigo_linea" name="codigo_linea" required>
 	                                <?php

@@ -20,7 +20,7 @@
 
 		function eliminar(id, idLinea ) {
 		    var q = $("#q").val();
-		    if (confirm("Realmente deseas eliminar el cliente")) {
+		    if (confirm("Realmente deseas eliminar la linea de negocio asigna al cliente")) {
 		        $.ajax({
 		            type: "GET",
 		            url: "./ajax/buscar_cliente_lineas.php",
